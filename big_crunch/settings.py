@@ -16,7 +16,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 MEDIA_URL = '/peek/media/'
-MEDIA_ROOT = Path.joinpath(BASE_DIR, 'peek/media')
+MEDIA_ROOT = '/mnt/sandisk32usb/minishare/media/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/

@@ -12,7 +12,6 @@ from django.conf import settings
 import os
 
 def peek(request):
-# def list_videos(request):
     videos_dir = os.path.join(settings.MEDIA_ROOT)  # Assuming videos are stored in /media/videos/
     video_files = [f for f in os.listdir(videos_dir) if f.endswith('.mvk')]
     # Generate the relative path from MEDIA_ROOT for each video
