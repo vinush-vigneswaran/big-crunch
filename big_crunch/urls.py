@@ -21,7 +21,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-MEDIA_ROOT = Path('/Downloads/')
+MEDIA_ROOT = Path('/mnt/sandisk32usb/minishare/media/')
 MEDIA_URL = '/media/'
 
 urlpatterns = [
