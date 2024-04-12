@@ -13,7 +13,7 @@ import os
 
 def peek(request):
     videos_dir = os.path.join(settings.MEDIA_ROOT)  # Assuming videos are stored in /media/videos/
-    video_files = [f for f in os.listdir(videos_dir) if f.endswith(('.mkv', '.mp4'))]
+    video_files = [f for f in os.listdir(videos_dir) if f.endswith('.mp4')]
     # Generate the relative path from MEDIA_ROOT for each video
     video_urls = ['media/' + file for file in video_files]  # Prepends the 'videos/' directory
     return render(request, 'video_list.html', {'video_files': video_urls})
