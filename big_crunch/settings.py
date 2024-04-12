@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-eg#-5u!!xadyo0rezys9ue43yi5_-k!g%gb^hicx-vrc0twyb4
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '192.168.1.110'
+    '192.168.1.110',
+    'big-crunch'
 ]
 
 
