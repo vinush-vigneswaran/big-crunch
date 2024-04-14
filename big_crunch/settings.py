@@ -15,8 +15,8 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = '/mnt/sandisk32usb/minishare/media/'
+MEDIA_URL = 'peek/media/'
+MEDIA_ROOT = BASE_DIR.joinpath('peek/media/')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -29,7 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '192.168.1.110',
-    'big-crunch'
+    'big-crunch',
+    '127.0.0.1'
 ]
 
 
