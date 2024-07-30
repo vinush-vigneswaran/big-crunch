@@ -20,6 +20,9 @@ echo ">>> Installing Docker"
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+echo ">>> Installing Docker Compose"
+sudo apt install docker-compose
+
 cd /home/big-crunch
 echo ">>> Starting all dockers ..."
 docker-compose  -f docker-compose.yml up
