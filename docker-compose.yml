@@ -1,14 +1,41 @@
-version: '3.8'
-
 services:
-  openvpn:
-    image: mjenz/rpi-openvpn
-    container_name: openvpn
-    ports:
-     - "1194:1194/udp"
+  wireguard:
+    image: lscr.io/linuxserver/wireguard:latest
+    container_name: wireguard
     cap_add:
       - NET_ADMIN
-    restart: unless-stopped
+      - SYS_MODULE #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SERVERURL=wireguard.domain.com #optional
+      - SERVERPORT=51820 #optional
+      - PEERS=1 #optional
+      - PEERDNS=auto #optional
+      - INTERNAL_SUBNET=10.13.13.0 #optional
+      - ALLOWEDIPS=0.0.0.0/0 #optional
+      - PERSISTENTKEEPALIVE_PEERS= #optional
+      - LOG_CONFS=true #optional
     volumes:
-     - ./openvpn-data/conf:/etc/openvpn
+      - /path/to/wireguard/config:/config
+      - /lib/modules:/lib/modules #optional
+    ports:
+      - 51820:51820/udp
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+    restart: unless-stopped
 
+#version: '3.8'
+#
+#services:
+#  openvpn:
+#    image: mjenz/rpi-openvpn
+#    container_name: openvpn
+#    ports:
+#     - "1194:1194/udp"
+#    cap_add:
+#      - NET_ADMIN
+#    restart: unless-stopped
+#    volumes:
+#     - ./openvpn-data/conf:/etc/openvpn
