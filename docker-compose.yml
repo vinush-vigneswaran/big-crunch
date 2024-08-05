@@ -1,13 +1,31 @@
-version: '3.8'
-
+version: "3"
 services:
-  openvpn:
-    image: mjenz/rpi-openvpn
-    container_name: openvpn
+  navidrome:
+    image: deluan/navidrome:latest
+    user: 1000:1000 # should be owner of volumes
     ports:
-     - "1194:1194/tcp"
-    cap_add:
-      - NET_ADMIN
+      - "4533:4533"
     restart: unless-stopped
+    environment:
+      # Optional: put your config options customization here. Examples:
+      ND_SCANSCHEDULE: 1h
+      ND_LOGLEVEL: info
+      ND_SESSIONTIMEOUT: 24h
+      ND_BASEURL: ""
     volumes:
-     - ./openvpn-data/conf:/etc/openvpn
+      - "/home/naspi/navidrome/data:/data"
+      - "/home/naspi/navidrome/music:/music:ro"
+
+#version: '3.8'
+#
+#services:
+#  openvpn:
+#    image: mjenz/rpi-openvpn
+#    container_name: openvpn
+#    ports:
+#     - "1194:1194/tcp"
+#    cap_add:
+#      - NET_ADMIN
+#    restart: unless-stopped
+#    volumes:
+#     - ./openvpn-data/conf:/etc/openvpn
