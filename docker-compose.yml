@@ -16,6 +16,23 @@ services:
       - "/srv/dev-disk-by-uuid-6070b0d0-26aa-4186-b9ba-b702e441f203/mammothshare/navidrome/data:/data"
       - "/srv/dev-disk-by-uuid-6070b0d0-26aa-4186-b9ba-b702e441f203/mammothshare/navidrome/media:/music:ro"
 
+  spotdl:
+    container_name: spotdl
+    image: spotdl/spotify-downloader
+    command: web --host 0.0.0.0 --web-use-output-dir
+    environment:
+      - PUID=1234 #CHANGE_TO_YOUR_UID
+      - PGID=1234 #CHANGE_TO_YOUR_GID
+      - TZ=Europe/Stockholm #CHANGE_TO_YOUR_TZ
+      - UMASK=002
+    ports:
+      - 8800:8800
+    volumes:
+      - "/srv/dev-disk-by-uuid-6070b0d0-26aa-4186-b9ba-b702e441f203/mammothshare/navidrome/media:/music" #must use the :/music for config to work.
+#    network_mode: XXXX #your custom dockernetwork
+    restart: unless-stopped
+
+
 #version: '3.8'
 #
 #services:
