@@ -4,4 +4,5 @@ git pull
 
 docker stop big-crunch_navidrome_1
 docker rm big-crunch_navidrome_1
-docker start big-crunch_navidrome_1
+
+docker-compose up -d
