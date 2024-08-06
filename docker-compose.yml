@@ -13,8 +13,8 @@ services:
       ND_SESSIONTIMEOUT: 24h
       ND_BASEURL: ""
     volumes:
-      - "/home/naspi/navidrome/data:/data"
-      - "/home/naspi/navidrome/music:/music:ro"
+      - "/srv/dev-disk-by-uuid-6070b0d0-26aa-4186-b9ba-b702e441f203/mammothshare/navidrome/data:/data"
+      - "/srv/dev-disk-by-uuid-6070b0d0-26aa-4186-b9ba-b702e441f203/mammothshare/navidrome/music:/music:ro"
 
 #version: '3.8'
 #
