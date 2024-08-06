@@ -14,7 +14,7 @@ services:
       ND_BASEURL: ""
     volumes:
       - "/srv/dev-disk-by-uuid-6070b0d0-26aa-4186-b9ba-b702e441f203/mammothshare/navidrome/data:/data"
-      - "/srv/dev-disk-by-uuid-6070b0d0-26aa-4186-b9ba-b702e441f203/mammothshare/navidrome/music:/music:ro"
+      - "/srv/dev-disk-by-uuid-6070b0d0-26aa-4186-b9ba-b702e441f203/mammothshare/navidrome/media:/music:ro"
 
 #version: '3.8'
 #
