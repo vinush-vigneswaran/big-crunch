@@ -6,3 +6,4 @@ docker stop big-crunch_navidrome_1
 docker rm big-crunch_navidrome_1
 
 docker-compose up -d
+docker ps -a
