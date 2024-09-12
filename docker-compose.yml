@@ -30,3 +30,7 @@ services:
       - "/mnt/kingston512ssd/falconShare/navidrome/media:/music" #must use the :/music for config to work.
     network_mode: host #your custom dockernetwork
     restart: unless-stopped
+
+volumes:
+  spotdl:
+    external: true
